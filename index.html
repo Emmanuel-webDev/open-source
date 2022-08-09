@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalClock</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap');
+        @media (min-width:230px) {
+            body{
+            margin: 0;
+            font-family:'Epilogue', sans-serif ;
+        }
+section{
+    display:grid;
+    place-items: center;
+    margin-top: 50%;
+}
+p{
+    text-align: center;
+    display: flex;
+}
+        }
+        @media (min-width:1000px) {
+            body{
+            margin: 0;
+            font-family:'Epilogue', sans-serif ;
+        }
+section{
+    display:grid;
+    place-items: center;
+    margin-top: 15%;
+}
+        }
+       
+    </style>
+</head>
+
+<body>
+    <section>
+        <p id="days"></p>
+        <h1 id="demo"></h1>
+        <p id="par"></p>
+    
+    </section>
+   
+    <script>
+        function time(){
+            let d = new Date();
+            let ampm = d.getHours() >= 12 ? 'pm' : 'am';
+        let now = `${d.getHours()}h : ${d.getMinutes()}m : ${d.getSeconds()}s ${ampm}`;
+        document.getElementById('demo').innerHTML= now;
+       
+        let days = ["sunday", 'Monday', 'Tuesday', 'Wednesday','Thursday', 'Friday', 'Saturday']
+        let daysw = d.getDay();
+        let daysofweek = days[daysw]
+        document.getElementById('days').innerHTML=daysofweek;
+
+      
+        if(d.getHours() <= 15){
+            document.getElementById('par').innerHTML= "Good Day, Let make today count";
+
+        }else if(d.getHours() >= 16){
+            document.getElementById('par').innerHTML= "Good Evening, Hope your day was awesome?"
+        }
+        }
+       
+      setInterval(time, 1000);
+        
+    </script>
+</body>
+</html>
