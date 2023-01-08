@@ -56,9 +56,18 @@ img{
     </section>
    
     <script>
+       
         function time(){
             let d = new Date();
-            let ampm = d.getHours() >= 12 ? 'pm' : 'am';
+             let ampm = d.getHours() >= 12 ? 'pm' : 'am';
+
+             if(ampm = 'pm'){
+           document.getElementById('img').src="808dabc5015daeb4696c4c39488bc837.jpg"
+        }else{
+            document.getElementById('img').src="_ (4).jpeg"
+            
+        }
+
         let now = `${d.getHours()}h : ${d.getMinutes()}m : ${d.getSeconds()}s ${ampm}`;
         document.getElementById('demo').innerHTML= now;
        
@@ -68,19 +77,16 @@ img{
         document.getElementById('days').innerHTML=daysofweek;
 
       
-        if(d.getHours() <= 15){
-            document.getElementById('par').innerHTML= "Good Day, Let make today count";
-
-        }else if(d.getHours() >= 16){
-            document.getElementById('par').innerHTML= "Good Evening, Hope your day was awesome?"
+        if(d.getHours() <= 12){
+            document.getElementById('par').innerHTML= "Good Day, Let's make today count";
+        }else if(d.getHours() > 12 && d.getHours() < 18){
+           document.getElementById('par').innerHTML = "Hope you having a nice day? Remember to always keep smiling because life is a beautiful thing and there is so much to smile about."
+        }else if(d.getHours() >= 18){
+            document.getElementById('par').innerHTML= "Good Evening, Hope your day was awesome? The evening's the best part of the day."
         }
         }
        
-        if(ampm = 'am'){
-          document.getElementById('img').src="_ (4).jpeg" 
-        }else{
-            document.getElementById('img').src="808dabc5015daeb4696c4c39488bc837.jpg"
-        }
+      
 
       setInterval(time, 1000);
 
