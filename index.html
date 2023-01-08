@@ -21,6 +21,10 @@ p{
     text-align: center;
     display: flex;
 }
+img{
+    width:100px;
+    height: 100px;
+}
         }
         @media (min-width:1000px) {
             body{
@@ -32,13 +36,19 @@ section{
     place-items: center;
     margin-top: 15%;
 }
+img{
+    width:100px;
+    height: 100px;
+}
         }
        
     </style>
 </head>
 
 <body>
+   
     <section>
+         <img src="" alt="undefined">
         <p id="days"></p>
         <h1 id="demo"></h1>
         <p id="par"></p>
@@ -52,7 +62,7 @@ section{
         let now = `${d.getHours()}h : ${d.getMinutes()}m : ${d.getSeconds()}s ${ampm}`;
         document.getElementById('demo').innerHTML= now;
        
-        let days = ["sunday", 'Monday', 'Tuesday', 'Wednesday','Thursday', 'Friday', 'Saturday']
+        let days = ["Sunday", 'Monday', 'Tuesday', 'Wednesday','Thursday', 'Friday', 'Saturday']
         let daysw = d.getDay();
         let daysofweek = days[daysw]
         document.getElementById('days').innerHTML=daysofweek;
