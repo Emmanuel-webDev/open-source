@@ -59,12 +59,6 @@ img{
         function time(){
             let d = new Date();
             let ampm = d.getHours() >= 12 ? 'pm' : 'am';
-        if(ampm = 'am'){
-          document.getElementById('img').src="./img/_ (4).jpeg" 
-        }else{
-            document.getElementById('img').src="./img/808dabc5015daeb4696c4c39488bc837.jpg"
-        }
-
         let now = `${d.getHours()}h : ${d.getMinutes()}m : ${d.getSeconds()}s ${ampm}`;
         document.getElementById('demo').innerHTML= now;
        
@@ -82,6 +76,12 @@ img{
         }
         }
        
+        if(ampm = 'am'){
+          document.getElementById('img').src="./img/_ (4).jpeg" 
+        }else{
+            document.getElementById('img').src="./img/808dabc5015daeb4696c4c39488bc837.jpg"
+        }
+
       setInterval(time, 1000);
 
         
