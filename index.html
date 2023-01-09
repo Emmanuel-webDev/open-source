@@ -61,11 +61,10 @@ img{
             let d = new Date();
              let ampm = d.getHours() >= 12 ? 'pm' : 'am';
 
-             if(ampm = 'pm'){
+             if(ampm === 'pm'){
            document.getElementById('img').src="808dabc5015daeb4696c4c39488bc837.jpg"
-        }else{
+        }else if(ampm === 'am'){
             document.getElementById('img').src="_ (4).jpeg"
-            
         }
 
         let now = `${d.getHours()}h : ${d.getMinutes()}m : ${d.getSeconds()}s ${ampm}`;
